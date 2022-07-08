@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 	<style>
+    p {margin: 25px 50px;}
+	div {margin: 25px 50px;}   
+    </style> -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/webslides.css">
+	<title>Effectiveness of Tree-Maps as Tree Visualization Techniques</title>
+</head>
+
+
+<body>
+	<main role="main">
+		<div class="wrap aligncenter">
+			<h1><small><small><strong>Effectiveness of Tree-Maps as Tree Visualization Techniques</strong></small></small></h1>
+			<p>
+			  <strong>Team Members</strong>: Po An Chen, Yiling Chen, Coco Luo
+			</p>
+		</div>
+		
+		
+		<article id="webslides" class="horizontal">
+			<section>
+				<!---------------------------------------------- Slide 1 Motivation ----------------------------------------------->
+				<div class="wrap size-80">
+					<h4 style="text-align:center">Motivation</h4>
+					<p class="text-intro">
+						Tree Structure visualization techniques are one of the important techniques to support the analysis of large hierarchical structure data. 
+						We usually use them as tree structure node-link diagram. However, it is difficult to visualize the content of directories when there are too many child nodes. 
+						In this project, we studied the effectiveness of the treemaps as tree structure visualization. Throughout the evolution of treemaps visualization techniques, different people developed different kinds of treemap sysmtems. 
+						Only four treemaps will be discussed here which are: standard treemaps, circular treemaps, Voronoi Treemaps, and Geo-Voronoi Treemaps.
+					</p>
+				</div>	
+			</section>
+			<section class="slide-top">
+				<!----------------------------------------------- Slide 2 Standard Treemap ---------------------------------------------->
+				<div class="wrap">
+					<div style="position:absolute; left:180px;">
+						<div class="grid">
+							
+							<div class="column">	
+								<h3 style="text-align:center"> Treemap </h3> </center>
+								<div id="observablehq-key-b2bcc4b7"></div>
+								<div id="observablehq-chart-b2bcc4b7" class="size-80"></div>
+								<!-- <iframe src="https://jovian.ai/embed?url=https://jovian.ai/hluo1999/treemap-3cfe3/v/1&cellId=7"></iframe> --> 
+							</div>
+							<div class="column">
+								<br><br>
+								<div id="observablehq-viewof-tile-b2bcc4b7" class="size-80"></div>
+								<div>Credit: <a href="https://observablehq.com/@d3/treemap">Treemap, CSV by Mike Bostock</a></div>
+								<div class="text-intro">
+									<small>Introduced by Ben Shneiderman, a treemap is an ideal tool for displaying large amounts of hierarchically structured data. 
+									The space in the visualization is split up into rectangles that are sized and ordered by a quantitative variable. 
+									This treemap is built to describe the class hierarchy for the Flare ActionScript visualization library. 
+									The dataset contains both the class hierarchy as well as the import connections between classes. 
+									Various algorithms can be used to determine how the rectangles in this treemap to be sized and ordered. 
+									From the treemap contributed by Bostock, we want to show that the viewers can select any shape of the tile they prefer to fit their data: binary, square, dice, etc.
+									</small>
+								</div>
+							</div>
+							
+							<script type="module">
+								import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+								import define from "https://api.observablehq.com/@826c4ddd8bde14d1/treemap-csv.js?v=3";
+								new Runtime().module(define, name => {
+								  if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-b2bcc4b7"));
+								  if (name === "key") return new Inspector(document.querySelector("#observablehq-key-b2bcc4b7"));
+								  if (name === "viewof tile") return new Inspector(document.querySelector("#observablehq-viewof-tile-b2bcc4b7"));
+								});
+							</script>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="slide-top">
+				<!----------------------------------------------- Slide 2 Standard Treemap ---------------------------------------------->
+				<div class="wrap">
+
+						<div class="grid sm">
+							<div class="column">
+								<!-- <h3 style="text-align:center"> Treemap </h3> </center> -->
+								<div class="text-intro">
+								<small>
+								This treemap was created by Plotly using the COVID-19 dataset. 
+								It presents the total number of COVID cases in different countries from 2021 and 2022. 
+								The levels in the hierarchy of the treemap are visualized as rectangles containing other rectangles. 
+								Continents are displayed as large rectangles, where countries are small rectangles nested inside those large ones. 
+								Each set of rectangles on the same level in the hierarchy represents a column in a data table. 
+								Each rectangle on a level in the hierarchy represents a category in a column. 
+								Colors and sizes are the most important encodings as they can become the factor for fast and accurate decision-making. 
+								Here, different colors are used to represent different continents, readers can see the proportions of COVID cases compared across years and among countries through the sizes of the rectangles. 
+								When the readers move their mouse over to one rectangle, a text box would show up and provide information about the parent node"continent", the child node"country", and the "total cases" in the selected country. 
+								By clicking their mouse, the readers can also zoom in and navigate to the selected region.
+								</small>
+								</div>
+							</div>
+							<div class="column">	
+								<iframe src="https://jovian.ai/embed?url=https://jovian.ai/hluo1999/treemap-3cfe3/v/1&cellId=7"height="700" width="1000" style="margin 0 auto; max-width: 1000px;" frameborder="0" scrolling="auto"></iframe> 
+							</div>
+							<script type="module">
+								import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+								import define from "https://api.observablehq.com/@826c4ddd8bde14d1/treemap-csv.js?v=3";
+								new Runtime().module(define, name => {
+								  if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-b2bcc4b7"));
+								  if (name === "key") return new Inspector(document.querySelector("#observablehq-key-b2bcc4b7"));
+								  if (name === "viewof tile") return new Inspector(document.querySelector("#observablehq-viewof-tile-b2bcc4b7"));
+								});
+							</script>
+						</div>
+
+				</div>
+			</section>
+			<section class="slide-top">
+				<!----------------------------------------------- Slide 3 Voronoi Treemap ----------------------------------------------->
+				<div class="wrap">
+					<div class="grid">
+						<div class="column">
+							<h4 style="text-align:center"> Voronoi Treemap </h4> <br><br>
+							<div class="wrap">
+								<div id="observablehq-viewof-date-7cf8b8fc" class="content-center"></div>
+								<br>
+								<div class="text-intro">
+								<small>
+									Voronoi treemap as an alternative to traditional rectangular treemaps for visualizing hierarchical data. 
+									Like rectangular treemaps, Voronoi treemaps represent hierarchical data by dividing the canvas region into cells for each node at the top of the hierarchy, and then further dividing each of these cells for the children of those nodes. 
+									The organic shapes created by the Voronoi treemap can be easier to distinguish sibling nodes from nodes in other branches of the hierarchy. 
+									Voronoi treemaps can also be fit to non-rectangular canvases, and are often more aesthetically pleasing. 
+								</small>
+								</div>
+							</div>
+						</div>
+						<div class="column">
+							<div id="observablehq-Voronoi_map-7cf8b8fc" class="size-60"></div>
+								
+						</div>
+					</div>
+					<script type="module">
+					import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+					import define from "https://api.observablehq.com/@826c4ddd8bde14d1/cse-512-final-project.js?v=3";
+					new Runtime().module(define, name => {
+					  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-7cf8b8fc"));
+					  if (name === "Voronoi_map") return new Inspector(document.querySelector("#observablehq-Voronoi_map-7cf8b8fc"));
+					  return ["choosedata","showvalue","data_nested","case_hierarchy","choosedata2","geo_voronoi_map"].includes(name);
+					});
+					</script>
+				</div>	
+			</section>
+
+
+			<section>
+				<!----------------------------------------------- Slide 4 Geo-Voronoi Treemap ---------------------------------------------->
+				<div class="wrap">
+					<div class="grid sm">
+						
+						<div class="column">
+							<h4> Geo-Voronoi Treemap </h4><br>
+							<div id="observablehq-viewof-n2-7cf8b8fc"></div><br>
+							<div id="observablehq-viewof-date2-7cf8b8fc"></div>
+							<br>
+							<small>
+							The visualization displayed here is an example of Voronoi treemap based on geographical locations. 
+							As we tried to map the Voronoi tree to the map, it became hard to interpret the size of each space. 
+							In this plot, bigger space doesn’t mean higher cases. 
+							Resulted from our projection method, the place closer to the North and South Poles will expand. 
+							We also put a pull bar to let the viewers select how many countries they wish to view on the map. 
+							Since we ordered the countries by the number of cases, the quicker it shows up suggests that the more case that country had during that period. 
+							If the readers move their mouse to the dots on the map, they can find out the names of the countries and the total cases associated.
+							</small>
+						</div>
+						<div class="column aligncenter">
+							<br><br>
+							<div id="observablehq-geo_voronoi_map-7cf8b8fc"></div>
+						</div>
+					</div>
+					
+					<script type="module">
+					import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+					import define from "https://api.observablehq.com/@826c4ddd8bde14d1/cse-512-final-project.js?v=3";
+					new Runtime().module(define, name => {
+					  if (name === "viewof date2") return new Inspector(document.querySelector("#observablehq-viewof-date2-7cf8b8fc"));
+					  if (name === "viewof n2") return new Inspector(document.querySelector("#observablehq-viewof-n2-7cf8b8fc"));
+					  if (name === "geo_voronoi_map") return new Inspector(document.querySelector("#observablehq-geo_voronoi_map-7cf8b8fc"));
+					  return ["choosedata3","voronoi"].includes(name);
+					});
+					</script>
+				</div>	
+			</section>
+			<section class="slide-top">
+				<!----------------------------------------------- Slide 5 circle tree map --------------------------------------------->
+				<div class="wrap">
+				<div class="grid">
+					<div class="column">
+					<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+					<h4 class="aligncenter">Zoomable Circle Packing</h4><br><br>
+					<div class="aligncenter">Credit: <a href="https://observablehq.com/@d3/zoomable-circle-packing">Zoomable Circle Packing by Mike Bostock</a></div>
+					<br><br><br>
+					<!-- <div class="text-intro"> -->
+					<p>
+					In circular treemaps, nested circles will be used to show the tree structure. 
+					Instead of using rectangular areas to represent a directory hierarchical data, here we used a circular treemap to describe the class hierarchy for the Flare ActionScript visualization library. 
+					The dataset we used contains both the class hierarchy as well as the import connections between classes. 
+					From the visualization, we can see that the size of each child is proportional to the number of its content. 
+					The viewers can zoom in and out by clicking on a circle. A circular treemap looks more pleasing than a standard treemap and it shows the hierarchies clearer. 
+					However, this type of tree structure techniques are not acceptable to some users due to the many circles of the nodes.
+					</p>
+					<!-- </div> -->
+					</div>
+					<div class="column">
+					<br><br><br>
+					<div id="observablehq-chart-5e052620" class="size-80"></div>
+					</div>
+					
+					<script type="module">
+					import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+					import define from "https://api.observablehq.com/@826c4ddd8bde14d1/zoomable-circle-packing.js?v=3";
+					new Runtime().module(define, name => {
+					  if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-5e052620"));
+					});
+					</script>
+				</div>
+				</div>
+			</section>
+			<section>
+
+				<!----------------------------------------------- Slide 6 Development Process --------------------------------------------->
+				<div class="wrap">
+					<h2>Development Process</h2>
+					<p>
+						We together created 4 different treemaps where Coco made the standard tree maps and completed all the writings, Andy generated the other treemaps and edited the format of the webpage. Yiling compared each treemaps and made the poster. We met in person twice a week to reflect on the development process and debug problems we met together. The whole process took us about 20 person-hours to accomplish, where we spent the greatest amount of time reading related papers and discussing about the project direction. It is challenging to come up with an innovative idea based on various sources of previous studies. We also spent some time organizing our web page. Rather than having all the treemaps displayed vertically in a single webpage, we would like to allow the users to slide back and force between the webpages and play around with each treemap. 
+					</p>
+				</div>
+				
+			</section>
+			<section class="slide-top">
+				<!----------------------------------------------- Slide 7 Conclusion ----------------------------------------------->
+				<div class="wrap">
+					<div class="grid">
+						<div class="column">
+							<h4>Concusion and Evaluation</h4>
+							<p>
+								This table summarizes the advantages and disadvantages of the four different types of tree-maps. These results were initially gathered during literature and were then supported by us fitting those plots on various data. Treemaps are highly efficient space since it uses space-filling techniques to represent data in a rectangular area. This makes treemaps suitable for large hierarchical structures and those trees with high aspect ratios on branches. Besides that, the space efficiency of treemaps allows additional graphical data to be combined into whole representation of a tree structure. Scalability is an exponential growth of treemaps. It shows how easy it is to expand the treemaps to become more effective tree visualization techniques. One main disadvantages of treemaps are low visibility. Users have difficulty seeing the whole hierarchical structure. It is more difficult to perceive the different levels of the tree. In can be frustrated to some users due to its difficulty to view the overall structure. 
+								<br>
+								Tree-maps provide users with an overview of a large and complex tree structure with a quicker processing time than the traditional node-link diagram. The four different types of tree-maps will give users a choice to choose the best representation that suits their application. All type of treemaps has their own advantages and also disadvantages. The main important elements of tree-maps are efficiency space and scalability. Almost all types of treemaps make use of its space efficiently by not leaving any free space when visualizing a tree structure. These efficient uses of spaces lessen the need for panning and zooming. The scalability of various tree-maps in high when representing large hierarchical structure data sets. While for a small data sets, it might seem to be not to important to use treemaps. Tree representation are common structure of data representation, we believe that tree-maps will continue to evolve and could one day become one of the main method in data visualization.
+							</p>
+						</div>
+						<div class="column">
+							<br><br>
+							<img src="img_1.png"></img>
+						</div>
+					</div>
+				</div>
+				
+			</section>
+			<section>
+				<!----------------------------------------------- Slide 8 Citation----------------------------------------------->
+				<div class="wrap">
+					<h4>Citation</h4>
+					<p>
+					  <em>
+						<p>Fischer, F. Fuchs, J. and Mansmann, F., ClockMap: Enhancing Circular Treemaps with Temporal Glyphs for Time-Series Data. In Proceedings of the Eurographics Conference on Visualization (EuroVis 2012), 2012.</p>
+						<p> <a href="https://doi.org/10.1016/j.procs.2017.12.136">Lim, L., Lim, H., E. et al. A Study on the Effectiveness of Tree-Maps as Tree Visualization Techniques. Procedia Computer Science (2017) </a></p>
+						<p> <a href="https://doi.org/10.1038/s41562-021-01122-8">Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021).</a></p>
+						<p> <a href="https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/36592.pdf">Mehdi, S., and Cyrus, S.(last access 05/31/2022). Google Scholar</a></p>
+						<p> <a href="https://doi.org/10.1038/s41597-020-00688-8">Hasell, J., Mathieu, E., Beltekian, D. et al. A cross-country database of COVID-19 testing. Sci Data 7, 345 (2020). </a> </p>
+						<p>Q.V. Nguyen, M.L. Huang, Enccon An Approach To Constructing Interactive Visualization of Large Hierarchical Data Inf Vis, 4 (1) (2005), pp. 1-21</p>
+						<p><a href="http://mjwest.org/vis/treemaps/">West, M.. Tree Maps (last access 05/31/2022). Google Scholar</a></p>
+					  </em>
+					</p>
+				</div>
+				<div class="wrap slide-bottom">
+					<p>
+						<span class="alignright">
+						  
+						  <a href="https://courses.cs.washington.edu/courses/cse512/22sp/">CSE 512 Data Visualization</a>
+						  <br>
+						  <a href="http://www.washington.edu">University of Washington</a>
+						</span>
+				    </p>
+				</div>
+			</section>
+		</article>
+	</main>
+	<script src="js/webslides.js"></script>
+	<script>
+		window.ws = new WebSlides();
+	</script>
+</body>
+</html>

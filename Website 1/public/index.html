@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Uncomment if you want your page to NOT be indexed by search engines: -->
+  <!-- <meta name="robots" content="none"> -->
+  <link rel="stylesheet" href="style.css" />
+  <title>TODO: Your project title</title>
+
+  <!-- Uncomment if using d3: -->
+  <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+</head>
+
+<body>
+  <main>
+    <h1>Coronavirus World Map: Tracing the Global Outbreak and Treatment</h1>
+
+    <p>
+      <strong>Team Members</strong>: Po An Chen, Yiling Chen, Haoxin Luo
+    </p>
+
+    <p>
+      
+      <div class='tableauPlaceholder' id='viz1651873839998' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CovidMap_16516177310430&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CovidMap_16516177310430&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CovidMap_16516177310430&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1651873839998');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='927px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+    </p>
+	
+	<!-- put d3 code here -->
+	<div id="observablehq-my_legend-3c71667c"></div>
+	<div id="observablehq-target_map-3c71667c"></div>
+	<div id="observablehq-viewof-latitude-3c71667c"></div>
+	<div id="observablehq-viewof-longtitude-3c71667c"></div>
+	<div id="observablehq-viewof-date-3c71667c"></div>
+
+	<script type="module">
+	import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+	import define from "https://api.observablehq.com/@826c4ddd8bde14d1/untitled.js?v=3";
+	new Runtime().module(define, name => {
+	  if (name === "target_map") return new Inspector(document.querySelector("#observablehq-target_map-3c71667c"));
+	  if (name === "my_legend") return new Inspector(document.querySelector("#observablehq-my_legend-3c71667c"));
+	  if (name === "viewof latitude") return new Inspector(document.querySelector("#observablehq-viewof-latitude-3c71667c"));
+	  if (name === "viewof longtitude") return new Inspector(document.querySelector("#observablehq-viewof-longtitude-3c71667c"));
+	  if (name === "viewof date") return new Inspector(document.querySelector("#observablehq-viewof-date-3c71667c"));
+	  return ["projection","path","choosed","choosedata"].includes(name);
+	});
+	</script>
+	<!-- d3 code end here -->
+    
+	<h2>Design Decisions</h2>
+    <p>
+      <em>Add a rationale for your design decisions. How did you choose your
+        particular visual encodings and interaction techniques? What
+        alternatives did you consider and how did you arrive at your ultimate
+        choices?</em>
+      
+    </p>
+
+    <h2>Development Process</h2>
+    <p>
+      <em>
+        <p>
+          Coronavirus disease 2019 (COVID-19) is a contagious disease caused by a virus, the severe acute respiratory coronavirus 2. The first known case was identified in Wuhan, China, in December 2019. The disease spread worldwide, leading to the COVID-19 pandemic. In this project, we designed an interactive world map to allow readers to trace global COVID outbreaks and treatments across time.  
+
+        </p>
+<p>
+  Our development process could be divided into 4 parts: exploring the dataset and analyzing variables we are interested in; preprocessing the data (dealing with missing variables, ambiguous terms, and extreme outliers); coding and debugging; write-up. Each group member shouldered different tasks, one member was mainly responsible for the coordination and writing up, and two mainly engaged in developing the designing code. We met in person twice a week to reflect on the development process and debug problems we met together. The whole process took us about 20 person-hours to accomplish, where we spent the greatest amount of time studying and developing the d3 code. Problems we encountered included data projection and tooltip control. For example, when the globe is moving, putting our mouse onto the image would create many tooltips which do not disappear. The problem was fixed as we initialized the tooltip every time after updating the data. Another difficult part of this project is scaling and aesthetic image design. Since we create several different images, what is a more expressive and effective way to put them together? What visual encodings would be superior to use to better convey our project ideas? 
+
+</p>
+<p>
+To conclude, although none of us has any graphic design experience, we found it challenging but interesting to develop an interactive graphic. We wish to improve our image better in the final project. 
+</p>
+</em>
+     
+    </p>
+
+    <footer>
+      <p>
+        <a href="https://courses.cs.washington.edu/courses/cse512/22sp/">CSE 512 Data Visualization</a>
+        <br>
+        <a href="http://www.washington.edu">University of Washington</a>
+      </p>
+    </footer>
+  </main>
+  <script src="main.js"></script>
+</body>
+
+</html>
